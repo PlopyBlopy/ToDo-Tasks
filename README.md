@@ -20,7 +20,7 @@
 - Визуализация: **20%**
 
 ### Превью приложения
-[Ссылка на превью](https://github.com/user-attachments/assets/8c336f66-9e95-4f6c-933b-b8dba13dfbf0)
+[Превью приложения](https://github.com/user-attachments/assets/7e443158-47d6-409c-b0ad-7b8241512dd6)
 
 ### Планируемые функции
 - Больше функциональных окон.
