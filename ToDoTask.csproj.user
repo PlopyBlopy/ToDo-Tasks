@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\Windows\TaskEditWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Resources\Elements\GroupsComboBoxTmpl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Elements\HoverEffectButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Elements\GroupItemTmpl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Elements\TaskItemTmpl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\AboutAppMenuUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\MyDayMenuUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\SettingMenuUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\StatisticMenuUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\TaskMenuUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\CreateGroupWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\CreateTaskWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\TaskEditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,108 @@
+<!--
+    using ViewModel OpenWindowVM.cs
+
+    using model -> WindowRegistry.cs, WindowSubRegistry.cs
+    to suggest possible windows to open with Enum.
+-->
+<Window
+    x:Class="ToDoTask.View.Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:ToDoTask.Models"
+    Title="MainWindow"
+    Width="550"
+    Height="600"
+    Background="White"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ToDoTask;component/Resources/Elements/HoverEffectButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--#region Add Task, Add Group-->
+        <Grid
+            Grid.Row="0"
+            Grid.Column="1"
+            Background="WhiteSmoke">
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowRegistry.CreateTaskWindow}"
+                    Content="Create Task"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowRegistry.CreateGroupWindow}"
+                    Content="Create Group"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Menu-->
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            Background="#f0f0f0">
+            <StackPanel
+                Width="70"
+                HorizontalAlignment="Left"
+                Orientation="Vertical">
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowSubRegistry.TaskSubWindow}"
+                    Content="Tasks"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowSubRegistry.MyDaySubWindow}"
+                    Content="My day"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowSubRegistry.StatisticSubWindow}"
+                    Content="Statistic"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowSubRegistry.SettingsSubWindow}"
+                    Content="Setting"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+                <Button
+                    Height="30"
+                    Command="{Binding OpenWindowVM.OpenWindowCommand}"
+                    CommandParameter="{x:Static model:WindowSubRegistry.AboutAppSubWindow}"
+                    Content="About"
+                    Style="{StaticResource HoverEffectButtonStyle}" />
+            </StackPanel>
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region SubWindow Frame-->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <ContentControl x:Name="ContentControl_SubWindow" />
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</Window>

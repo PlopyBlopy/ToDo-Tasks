@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ToDoTask;component/Resources/Elements/TaskItemTmpl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate x:Key="GroupItemTmpl" DataType="ListBox">
+
+        <StackPanel Orientation="Vertical">
+            <Expander IsExpanded="{Binding IsExpanded}">
+                <Expander.Header>
+                    <Button Command="{Binding ToggleExpandCommand}">
+                        <TextBlock FontWeight="Bold" Text="{Binding Group.Title}" />
+                    </Button>
+                </Expander.Header>
+                <ListBox
+                    ItemTemplate="{StaticResource TaskItemTemplate}"
+                    ItemsSource="{Binding Tasks}"
+                    VirtualizingPanel.IsVirtualizing="True"
+                    VirtualizingPanel.VirtualizationMode="Recycling" />
+            </Expander>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>
